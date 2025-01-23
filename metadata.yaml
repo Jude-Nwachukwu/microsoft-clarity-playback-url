@@ -1,0 +1,5 @@
+homepage: 'https://dumbdata.co/'
+documentation: 'https://github.com/Jude-Nwachukwu/microsoft-clarity-playback-url'
+versions:
+  - sha: c26cc73b72bf6af6bac0d4d2df162d4905555a5c
+    changeNotes: Initial release.
