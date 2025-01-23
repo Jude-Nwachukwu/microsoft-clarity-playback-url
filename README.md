@@ -3,7 +3,7 @@
 ## Overview
 This repository contains a WEB Google Tag Manager (GTM) custom variable template named **Microsoft Clarity Playback URL**. This template generates session recording playback URLs for Microsoft Clarity by processing the `_clsk` and `_clck` cookies.
 
-## Features
+## How It Works
 - Reads and URL-decodes `_clsk` and `_clck` cookies.
 - Splits cookie values by the `|` character and extracts the first segment.
 - Combines the extracted values with the Clarity Project ID to generate the playback URL.
@@ -11,7 +11,7 @@ This repository contains a WEB Google Tag Manager (GTM) custom variable template
 
 ## Installation
 1. Import the template into your Google Tag Manager account:
-   - Download the [template JSON file](link-to-template-json).
+   - Download the [template JSON file](https://github.com/Jude-Nwachukwu/microsoft-clarity-playback-url/blob/main/template.tpl).
    - Navigate to **Templates** > **New** > **Import Template** in GTM.
   
 Alternatively, you can download the **template.tpl** file and import it to your GTM web GTM container as a variable custom template.
