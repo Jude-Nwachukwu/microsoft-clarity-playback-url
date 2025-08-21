@@ -5,7 +5,7 @@ This repository contains a WEB Google Tag Manager (GTM) custom variable template
 
 ## How It Works
 - Reads and URL-decodes `_clsk` and `_clck` cookies.
-- Splits cookie values by the `|` character and extracts the first segment.
+- Splits cookie values by the `^`, which is the new delimiter for the cookie change, and in the absence of `^`, it defaults to the `|` character and extracts the first segment.
 - Combines the extracted values with the Clarity Project ID to generate the playback URL.
 - Returns `undefined` if any required data is missing or invalid.
 
@@ -25,8 +25,8 @@ Alternatively, you can download the **template.tpl** file and import it to your 
 
 ## Example Output
 Given the following:
-- `_clsk` cookie value: `abcd1234|someotherdata`
-- `_clck` cookie value: `xyz987|moredata`
+- `_clsk` cookie value: `abcd1234^someotherdata`
+- `_clck` cookie value: `xyz987^moredata`
 - Clarity Project ID: `myProjectID`
 
 The generated playback URL will be:
@@ -35,6 +35,9 @@ https://clarity.microsoft.com/player/myProjectID/xyz987/abcd1234
 
 
 ## Additional Resources
+- Learn how to get the Microsoft Clarity Session Recording Playback URL (with or without Google Tag Manager):  
+[Read the guide here](https://dumbdata.co/post/how-to-get-the-microsoft-clarity-session-recording-playback-url-with-without-gtm/)
+  
 - Learn how to integrate session recording tools (like Microsoft Clarity) with analytics platforms such as Google Analytics, Piwik Pro, Mixpanel, and more:  
   [Read the guide here](https://dumbdata.co/post/how-to-integrate-session-recording-tools-with-your-analytics/).
 
