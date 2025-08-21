@@ -10,10 +10,13 @@ ___INFO___
 
 {
   "type": "MACRO",
-  "id": "cvt_temp_public_id",
+  "id": "cvt_T5PHP",
   "version": 1,
   "securityGroups": [],
   "displayName": "Microsoft Clarity Playback URL",
+  "categories": [
+    "SESSION_RECORDING"
+  ],
   "description": "Retrieves the URL for Microsoft Clarity session playback recordings for that user\u0027s session.",
   "containerContexts": [
     "WEB"
@@ -57,7 +60,7 @@ if (!clskCookieValues || !clskCookieValues.length ||
   return undefined; // Return undefined if cookies are missing
 }
 
-// Decode and split cookie values
+// Decode cookie values
 let clskValue = decode(clskCookieValues[0]);
 let clckValue = decode(clckCookieValues[0]);
 
@@ -65,8 +68,16 @@ if (!clskValue || !clckValue) {
   return undefined; // Return undefined if decoding fails
 }
 
-clskValue = clskValue.split('|')[0];
-clckValue = clckValue.split('|')[0];
+// Helper: split by ^ first, else by |
+function splitValue(val) {
+  if (val.indexOf('^') !== -1) {
+    return val.split('^')[0];
+  }
+  return val.split('|')[0];
+}
+
+clskValue = splitValue(clskValue);
+clckValue = splitValue(clckValue);
 
 if (!clskValue || !clckValue) {
   return undefined; // Return undefined if splitting fails
