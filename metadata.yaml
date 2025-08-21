@@ -1,5 +1,10 @@
 homepage: 'https://dumbdata.co/'
 documentation: 'https://github.com/Jude-Nwachukwu/microsoft-clarity-playback-url'
 versions:
+# LATEST VERSION
+  - sha: 4657c615cbdae6d06deacaae250bec0ab4eeb488
+    changeNotes: Support clarity cookie values changes.
+
+# INITIAL VERSION
   - sha: c26cc73b72bf6af6bac0d4d2df162d4905555a5c
     changeNotes: Initial release.
